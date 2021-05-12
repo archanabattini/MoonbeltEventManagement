@@ -11,7 +11,9 @@ If the Moonbelt.mdf and Moonbelt_log files are placed elsewhere please make sure
 
 Git clone or download the project 
 
-Open the solution in Visual studio, Build and Run it, Swagger documentation of API will be displayed
+Open the solution in Visual studio, in appsettings.json file, modify the ConnectionStrings
+
+Build and Run the solution, Swagger documentation of API will be displayed
 
 Please make a note of the port displayed
 
