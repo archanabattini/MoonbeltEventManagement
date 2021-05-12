@@ -29,7 +29,7 @@ In Commandprompt go to the folder MoonbeltPartyManagerApp and run the commands
 
 npm install
 
-ng serve
+ng serve to run the application
 
 
 
