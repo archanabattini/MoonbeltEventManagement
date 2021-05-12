@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="personPartyRelForm" (ngSubmit)="managePersonPartyRel()" novalidate>
+            <div class="row">
+                <div class="col-4">
+                    <label for="party" class="form-label">Select Party</label>
+                    <select class="form-control" id="party" name="party" formControlName="party">
+                        <option *ngFor="let p1 of parties" [ngValue]="p1">{{p1.title}}</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="person" class="form-label">Select Person</label>
+                    <select class="form-control" id="person" name="person" formControlName="person">
+                        <option *ngFor="let p2 of persons" [ngValue]="p2">{{p2.firstName + ' ' + p2.lastName}}</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="drink" class="form-label">Select Favourite Drink</label>
+                    <select class="form-control" id="drink" name="drink" formControlName="drink">
+                        <option *ngFor="let d of drinks" [ngValue]="d">{{d.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success mt-3 me-5">Save</button>
+                    <button type="button" class="btn btn-danger mt-3" (click)="cancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

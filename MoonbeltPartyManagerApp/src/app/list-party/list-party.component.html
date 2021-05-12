@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-12">
+        <p class="text-end mt-4">
+            <button type="button" class="btn btn-primary" routerLink="add-new">Add New Party</button>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Party Title</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of parties">
+                <th scope="row">{{p.id}}</th>
+                <td>{{p.title}}</td>
+                <td>
+                    <button class="btn btn-link" (click)="goToPersons(p)">View Persons</button> /
+                    <button class="btn btn-link" (click)="goToAddPerson(p)">Add Person</button> / 
+                    <button class="btn btn-link" (click)="goToUpdateParty(p)">Edit</button> /
+                    <button class="btn btn-link" (click)="deleteParty(p)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

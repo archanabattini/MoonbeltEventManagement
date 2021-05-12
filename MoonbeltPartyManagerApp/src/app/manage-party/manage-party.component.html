@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="partyForm" (ngSubmit)="onAddOrUpdateParty()" novalidate>
+            <div class="row">
+                <div class="col-12 form-group">
+                    <label for="title" class="form-label">Party Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Enter party title" name="title" formControlName="title">
+                </div>
+                <div class="col-12 form-group">
+                    <label for="venue" class="form-label">Venue Address</label>
+                    <textarea class="form-control" id="venue" rows="3" name="venue" formControlName="venue"></textarea>
+                </div>
+                <div class="col-12 form-group">
+                    <label for="startDateTime" class="form-label">Start Date & Time [yyyy-mm-dd hh24:mi]</label>
+                    <input type="text" class="form-control" id="startDateTime" name="startDateTime" formControlName="startDateTime" placeholder="Enter in the format yyyy-mm-dd hh24:mi">
+                </div>
+                <div class="col-12 form-group">
+                    <label for="partyTitleInput" class="form-label">End Date & Time [yyyy-mm-dd hh24:mi]</label>
+                    <input type="text" class="form-control" id="endDateTime" name="endDateTime" formControlName="endDateTime" placeholder="Enter in the format yyyy-mm-dd hh24:mi">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success mt-3 me-5">Save</button>
+                    <button type="button" class="btn btn-danger mt-3" routerLink="../">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

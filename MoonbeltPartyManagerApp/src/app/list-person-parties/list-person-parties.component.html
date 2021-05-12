@@ -1,0 +1,35 @@
+
+<div class="row">
+    <div class="col-12">
+        <h3>{{person.firstName}} {{person.lastName}}</h3>
+    </div>
+    <div class="col-12">
+        <h4>{{person.email}}</h4>
+    </div>
+    <div class="col-12">
+        <h4>{{person.phoneNumber}}</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Party Title</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of parties">
+                <th scope="row">{{p.id}}</th>
+                <td>{{p.title}}</td>
+                <td>
+                    <button class="btn btn-link" (click)="goToManageDrink(p)">Manage Drink</button> / 
+                    <button class="btn btn-link" (click)="deletePersonPartyRel(p.id, personId)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

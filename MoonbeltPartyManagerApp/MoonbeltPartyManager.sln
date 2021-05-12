@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoonbeltPartyManager", "MoonbeltPartyManager\MoonbeltPartyManager.csproj", "{3ED0DCB8-2123-49CB-8560-58004D615CDE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CC159152-C148-4702-9EF0-3120030B6B5E} = {CC159152-C148-4702-9EF0-3120030B6B5E}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoonbeltPartyManagerTests", "MoonbeltPartyManagerTests\MoonbeltPartyManagerTests.csproj", "{F8C4659A-DA59-4E0E-8729-EF4049E860E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3ED0DCB8-2123-49CB-8560-58004D615CDE} = {3ED0DCB8-2123-49CB-8560-58004D615CDE}
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MoonbeltPartyDB", "MoonbeltPartyDB\MoonbeltPartyDB.sqlproj", "{CC159152-C148-4702-9EF0-3120030B6B5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3ED0DCB8-2123-49CB-8560-58004D615CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED0DCB8-2123-49CB-8560-58004D615CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED0DCB8-2123-49CB-8560-58004D615CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED0DCB8-2123-49CB-8560-58004D615CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C4659A-DA59-4E0E-8729-EF4049E860E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C4659A-DA59-4E0E-8729-EF4049E860E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C4659A-DA59-4E0E-8729-EF4049E860E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C4659A-DA59-4E0E-8729-EF4049E860E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC159152-C148-4702-9EF0-3120030B6B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC159152-C148-4702-9EF0-3120030B6B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC159152-C148-4702-9EF0-3120030B6B5E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CC159152-C148-4702-9EF0-3120030B6B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC159152-C148-4702-9EF0-3120030B6B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC159152-C148-4702-9EF0-3120030B6B5E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {466B44A0-125D-46BD-AF89-2579F61DD3A7}
+	EndGlobalSection
+EndGlobal
