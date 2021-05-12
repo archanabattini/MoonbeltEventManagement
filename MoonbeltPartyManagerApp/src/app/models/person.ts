@@ -16,6 +16,8 @@ export class Person {
 
     @jsonMember({ name: "phoneNumber", constructor: String })
     phoneNumber!: string;
+
+    drink!: string;
  
     public constructor(init?: Partial<Person>)
     {

@@ -9,10 +9,12 @@ namespace MoonbeltEventManager.Repository
     public class PersonRepository : IPersonRepository
     {
         private MoonbeltContext db;
+        private IPersonPartyRepository repo;
 
-        public PersonRepository(MoonbeltContext db)
+        public PersonRepository(MoonbeltContext db, IPersonPartyRepository repo)
         {
             this.db = db;
+            this.repo = repo;
         }
         public bool CheckPersonExists(int personId)
         {
@@ -50,6 +52,7 @@ namespace MoonbeltEventManager.Repository
         }
         public void DeletePerson(int personId)
         {
+            repo.DeletePersonFromPersonParty(personId);
             Person p = db.Persons.Where(x => x.Id == personId).FirstOrDefault();
 
             if(p != null)

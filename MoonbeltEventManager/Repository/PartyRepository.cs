@@ -9,12 +9,16 @@ namespace MoonbeltEventManager.Repository
     public class PartyRepository : IPartyRepository
     {
         private MoonbeltContext db;
-        public PartyRepository(MoonbeltContext db)
+        private IPersonPartyRepository repo;
+
+        public PartyRepository(MoonbeltContext db, IPersonPartyRepository repo)
         {
             this.db = db;
+            this.repo = repo;
         }
         public void DeleteParty(int partyId)
         {
+            repo.DeletePartyFromPersonParty(partyId);
             Party p = db.Parties.Where(x => x.Id == partyId).FirstOrDefault();
 
             if (p != null)

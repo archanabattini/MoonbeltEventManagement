@@ -51,6 +51,32 @@ namespace MoonbeltEventManager.Repository
                 db.SaveChanges();
             }
         }
+        public void DeletePartyFromPersonParty(int partyId)
+        {
+            if (CheckPartyExists(partyId))
+            {
+              List<PersonParty> personpartylist = db.PersonParties.Where(x => x.PartyId == partyId).ToList();
+                foreach(PersonParty item in personpartylist)
+                {
+                    db.Remove(item);
+                }
+
+                db.SaveChanges();
+            }
+        }
+        public void DeletePersonFromPersonParty(int personId)
+        {
+            if (CheckPersonExists(personId))
+            {
+                List<PersonParty> personpartylist = db.PersonParties.Where(x => x.PersonId == personId).ToList();
+                foreach (PersonParty item in personpartylist)
+                {
+                    db.Remove(item);
+                }
+
+                db.SaveChanges();
+            }
+        }
         public void ChangeDrinkForPersonParty(int personId, int partyId, int? drinkId)
         {
             if (CheckPartyExists(partyId) && CheckPersonExists(personId) && (GetDrinkForPersonParty(personId,partyId) != null))
@@ -68,6 +94,19 @@ namespace MoonbeltEventManager.Repository
                 PersonParty personparty = db.PersonParties.Where(x => x.PersonId == personId && x.PartyId == partyId).FirstOrDefault();
                 return personparty;
             } else
+            {
+                return null;
+            }
+        }
+
+        public List<PersonParty> GetDrinkForPartyPersons(List<int> personIds, int partyId)
+        {
+            if (CheckPartyExists(partyId))
+            {
+                return db.PersonParties.Where(x => x.PartyId == partyId && personIds.Contains(x.PersonId) ).ToList();
+                
+            }
+            else
             {
                 return null;
             }

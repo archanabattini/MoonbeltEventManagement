@@ -40,6 +40,18 @@ export class PartyPersonRelService {
       }));
   }
 
+  getPartyPersonDrinks(personIds: number[], partyId: number): Observable<PersonPartyRel[]> {
+    return this.http.post(`${environment.baseUrl}/${this.baseContext}/Parties/${partyId}/Persons`, personIds).pipe(
+      map((data: any) => {
+        const temp: any[] = [];
+        const serializer = new TypedJSON(PersonPartyRel);
+        data.forEach((element: any) => {
+          temp.push(serializer.parse(JSON.stringify(element)));
+        });
+          return temp;
+      }));
+  }
+
   getPersonParties(personId: number): Observable<number[]> {
     return this.http.get(`${environment.baseUrl}/${this.baseContext}/Persons/${personId}`).pipe(
       map((data: any) => {

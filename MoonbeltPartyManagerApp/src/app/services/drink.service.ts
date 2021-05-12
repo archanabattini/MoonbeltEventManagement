@@ -37,6 +37,19 @@ export class DrinkService {
     );
   }
 
+  getDrinksList(ids: number[]): Observable<Drink[]> {
+    return this.http.post(`${environment.baseUrl}/${this.baseContext}/Search`, ids).pipe(
+      map((data: any) => {
+        const temp: any[] = [];
+        const serializer = new TypedJSON(Drink);
+        data.forEach((element: any) => {
+          temp.push(serializer.parse(JSON.stringify(element)));
+        });
+        return temp;
+      })
+    );
+  }
+
   getDrink(id: number): Observable<Drink> {
     return this.http.get(`${environment.baseUrl}/${this.baseContext}/${id}`).pipe(
       map((data: any) => {

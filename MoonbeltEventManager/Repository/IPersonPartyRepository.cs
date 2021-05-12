@@ -15,6 +15,9 @@ namespace MoonbeltEventManager.Repository
         void ChangeDrinkForPersonParty(int personId, int partyId, int? drinkId);
         List<int> GetPersonParties(int personId);
         PersonParty GetDrinkForPersonParty(int personId, int partyId);
+        void DeletePartyFromPersonParty(int partyId);
+        void DeletePersonFromPersonParty(int personId);
+        List<PersonParty> GetDrinkForPartyPersons(List<int> personIds, int partyId);
 
     }
 }

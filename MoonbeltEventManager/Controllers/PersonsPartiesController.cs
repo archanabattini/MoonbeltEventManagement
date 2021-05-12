@@ -64,6 +64,21 @@ namespace MoonbeltEventManager.Controllers
             }
         }
         [HttpPost]
+        [Route("/api/Relations/Parties/{PartyId}/Persons")]
+        public IActionResult GetDrinkForPartyPersons([FromBody] List<int> PersonIds, int PartyId)
+        {
+            try
+            {
+                List<PersonParty> partyPersonsDrinks = repo.GetDrinkForPartyPersons(PersonIds, PartyId);
+                return Ok(partyPersonsDrinks);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
         [Route("/api/Relations")]
         public IActionResult AddPartyToPerson([FromBody] PersonParty personParty)
         {

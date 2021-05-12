@@ -15,5 +15,6 @@ namespace MoonbeltEventManager.Repository
         void DeleteDrink(int DrinkId);
         bool CheckDrinkExists(int DrinkId);
         Drink AddDrink(Drink drink);
+        List<Drink> GetDrinksByIds(List<int> drinkIds);
     }
 }

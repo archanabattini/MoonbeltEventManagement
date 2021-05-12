@@ -41,6 +41,10 @@ namespace MoonbeltEventManager.Repository
         {
             return db.Drinks.Where(x => x.Id == drinkId).FirstOrDefault();
         }
+        public List<Drink> GetDrinksByIds(List<int> drinkIds)
+        {
+            return db.Drinks.Where(x => drinkIds.Contains(x.Id)).ToList();
+        }
 
         public void UpdateDrink(int drinkId, Drink drink)
         {

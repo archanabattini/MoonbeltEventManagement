@@ -49,6 +49,21 @@ namespace MoonbeltEventManager.Controllers
                 return BadRequest();
             }
         }
+        [HttpPost]
+        [Route("/api/Drinks/Search")]
+        public IActionResult getDrinksByIds([FromBody] List<int> Ids)
+        {
+            try
+            {
+                List<Drink> drinks = repo.GetDrinksByIds(Ids);
+                return Ok(drinks);
+
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
 
         [HttpPost]
         [Route("/api/Drinks")]

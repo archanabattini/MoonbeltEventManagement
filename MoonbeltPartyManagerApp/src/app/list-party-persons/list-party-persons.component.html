@@ -19,6 +19,7 @@
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Phone Number</th>
+                <th scope="col">Drink</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -28,6 +29,7 @@
                 <td>{{p.firstName}}</td>
                 <td>{{p.lastName}}</td>
                 <td>{{p.phoneNumber}}</td>
+                <td>{{p.drink}}</td>
                 <td>
                     <button class="btn btn-link" (click)="goToManageDrink(p)">Manage Drink</button> / 
                     <button class="btn btn-link" (click)="deletePersonPartyRel(partyId, p.id)">Delete</button>
