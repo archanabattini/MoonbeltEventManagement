@@ -1,4 +1,7 @@
 # MoonbeltEventManagement
+- Solution Approach:
+Created .Net Core Web API and Angular front end application using the API.
+
 - DB Set Up Steps
 
 Please copy the checkout Moonbelt.mdf and Moonbelt_log files and place them here C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA folder
